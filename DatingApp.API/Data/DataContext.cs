@@ -1,4 +1,5 @@
 using DatingApp.API.Controllers.Models;
+using DatingApp.API.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.API.Data
@@ -15,5 +16,8 @@ namespace DatingApp.API.Data
         //Creating entities
         //Here Values is the table name, Value is the model class
         public DbSet<Value> Values { get; set; }
+
+        public DbSet<User> Users { get; set; }
+
     }
 }

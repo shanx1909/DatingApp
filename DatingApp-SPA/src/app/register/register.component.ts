@@ -8,14 +8,13 @@ import { AuthService } from '../_services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  @Input() valuesFromHome: any;
   @Output() cancelRegister = new EventEmitter();
   model: any = {};
    // Input is used when passing value from
   // parent to child. valuesFromHome is property used in home component
   // output property uses event emitter
 
-  constructor(private authService : AuthService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -24,7 +23,7 @@ export class RegisterComponent implements OnInit {
   //   console.log(this.model);
   // }
 
-  register(){
+  register() {
     this.authService.register(this.model).subscribe(() => {
       console.log('registration successful');
     }, error => {
@@ -32,7 +31,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  cancel(){
+  cancel() {
     this.cancelRegister.emit(false);
     console.log('cancelled');
   }
